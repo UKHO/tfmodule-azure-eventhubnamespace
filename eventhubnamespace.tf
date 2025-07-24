@@ -12,7 +12,7 @@ module "eventhubs" {
   count  = length(var.event_hubs)
   source = "github.com/ukho/tfmodule-azure-event-hub?ref=v0.6.0"
   providers = {
-    src = azurerm.src
+    azurerm.src = azurerm.src
   }
   service                 = var.service
   environment             = var.environment
