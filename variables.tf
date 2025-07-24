@@ -1,21 +1,16 @@
-variable "name" {
+variable "product" {
   type = string
-  default = "test"
-}
-
-variable "product_alias" {
-  type = string
-  description = "The alias for the project"
+  description = "The product name (no spaces)"
 }
 
 variable "service" {
   type = string
-  description = "The service name to be logged"
+  description = "The service name to be logged (no spaces)"
 }
 
 variable "environment" {
   type = string
-  default = "Environment name or resource"
+  default = "Environment name or resource (no spaces)"
 }
 
 variable "location" {
@@ -53,10 +48,4 @@ variable "event_hubs" {
   }))
   description = "List of Event Hubs with their settings"
   default     = []
-}
-
-variable "event_hub_module_version" {
-  type = string
-  description = "Version of the Event Hub module to use"
-  default = "v0.6.0"
 }
