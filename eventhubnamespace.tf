@@ -1,6 +1,6 @@
 resource "azurerm_eventhub_namespace" "ehns" {
   provider            = azurerm.src
-  name                = "${var.product_alias}-${var.service}-${var.environment}-ehns"
+  name                = "${var.product}-${var.environment}-ehns"
   resource_group_name = var.resource_group_name
   location            = var.location
   sku                 = var.sku
@@ -10,10 +10,11 @@ resource "azurerm_eventhub_namespace" "ehns" {
 
 module "eventhubs" {
   count  = length(var.event_hubs)
-  source = "github.com/ukho/tfmodule-azure-event-hub?ref=v0.6.0"
+  source = "github.com/ukho/tfmodule-azure-event-hub?ref=v0.7.0"
   providers = {
     azurerm.src = azurerm.src
   }
+  product                 = var.product
   service                 = var.service
   environment             = var.environment
   role                    = var.event_hubs[count.index].role
