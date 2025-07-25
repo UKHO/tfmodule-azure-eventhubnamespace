@@ -3,11 +3,6 @@ variable "product" {
   description = "The product name (no spaces)"
 }
 
-variable "service" {
-  type = string
-  description = "The service name to be logged (no spaces)"
-}
-
 variable "environment" {
   type = string
   default = "Environment name or resource (no spaces)"
@@ -41,6 +36,7 @@ variable "tags" {
 #array of event hubs and settings
 variable "event_hubs" {
   type = list(object({
+    service             = string
     role                = string
     partition_count     = number
     message_retention   = number
