@@ -10,7 +10,7 @@ resource "azurerm_eventhub_namespace" "ehns" {
 
 module "eventhubs" {
   count  = length(var.event_hubs)
-  source = "github.com/ukho/tfmodule-azure-event-hub?ref=0.8.1"
+  source = "github.com/ukho/tfmodule-azure-event-hub?ref=v0.8.1"
   providers = {
     azurerm.src = azurerm.src
   }
