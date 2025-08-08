@@ -5,7 +5,7 @@ variable "product" {
 
 variable "environment" {
   type = string
-  default = "Environment name or resource (no spaces)"
+  description = "Environment name or resource (no spaces)"
 }
 
 variable "location" {
