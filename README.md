@@ -1,13 +1,6 @@
 # tfmodule-azure-eventhubnamespace
 
-Use this module to create an eventhub namespace. 
-
-After this has been run the Elastic policy and data stream will be created.  To create an Elastic Data View using the new data stream you must first push logs to the event hub.  Then the data stream will appear when setting the index pattern for the new Data View.
-
-## Requirements
-
-- `Service` Pass in a service name for the service you want to log. To manage multiple services create multiple references to the module (see usage). 
-- `EventHubNameSpace` This module requires an eventhub namespace to be created in your terraform before the module can be called. Ensure you have a depends on within the module to your EventHub Namespace.
+Use this module to create an eventhub namespace and some associated event hubs, it is possible to create event hubs separately.
 
 ## Usage
 
