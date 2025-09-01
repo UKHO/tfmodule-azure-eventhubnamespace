@@ -11,3 +11,8 @@ output "eventhub_namespace_id" {
 output "eventhubs" {
   value = module.eventhubs[*]
 }
+
+output "eventhub_name" {
+  value       = module.eventhubs.eventhub_name
+  description = "The name of the Event Hub from the Event Hub module"
+}
