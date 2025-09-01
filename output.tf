@@ -14,5 +14,5 @@ output "eventhubs" {
 
 output "eventhub_name" {
   value       = [for eh in module.eventhubs : eh.eventhub_name]
-  description = "The names of the Event Hubs from the Event Hub module"
+  description = "The name of the Event Hub from the Event Hub module"
 }
